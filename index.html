@@ -4,10 +4,198 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invitation Baptême Gabriel</title>
-    <script type="module" crossorigin src="/index-u3xXfCTs.js"></script>
-    <link rel="stylesheet" crossorigin href="/index-FvsQcfJ-.css">
   </head>
   <body>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Merienda&family=Roboto:wght@400;500&display=swap');
+
+      :root{
+        --main-color: #ffffff;
+      }
+      
+      *, *:before, *::after{
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0;
+      }
+      
+      body{
+        background-color: #ffffff;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      #app{
+        height: 100%;
+      }
+      
+      .background-winnie{
+        height: 100%;
+        background: url(/winnie-l-ourson-arbre.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      
+      .main-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        gap: 25px;
+      }
+      
+      h1 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 12ch;
+      }
+      
+      h2 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 7ch;
+        font-weight: 100;
+      }
+      
+      h3{
+        font-family: 'Merienda', cursive;
+        text-transform: uppercase;
+        font-size: 5ch;
+      }
+      
+      p {
+        font-family: 'Roboto', sans-serif;
+        text-transform: uppercase;
+      }
+      
+      .bees{
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+      }
+      
+      .bee{
+        height: 50px;
+        width: 50px;
+        background: url(/bee.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        top: -50px;
+        left: -50px;
+      }
+      
+      .bee.to-up{
+        top: unset;
+        animation: beeUp 7s infinite;
+      }
+      .bee.to-down{
+        transform: rotate(180deg);
+        animation: beeDown 16s infinite 2s;
+      }
+      .bee.to-left{
+        left: unset;
+        transform: rotate(-90deg);
+        animation: beeLeft 20s infinite 10s;
+      }
+      .bee.to-right{
+        transform: rotate(90deg);
+        animation: beeRight 30s infinite 5s;
+      }
+      
+      @keyframes beeUp {
+        from{
+          left: 75%;
+          bottom: -50px;
+        }
+        50%, 100%{
+          left: 75%;
+          bottom: 100%;
+        }
+      }
+      
+      @keyframes beeDown {
+        from{
+          left: 45%;
+          top: -50px;
+        }
+        50%, 100%{
+          left: 45%;
+          top: 100%;
+        }
+      }
+      @keyframes beeLeft {
+        from{
+          right: -50px;
+          top: 80%;
+        }
+        50%, 100%{
+          right: 105%;
+          top: 80%;
+        }
+      }
+      @keyframes beeRight {
+        from{
+          left: -50px;
+          top: 33%;
+        }
+        50%, 100%{
+          left: 105%;
+          top: 33%;
+        }
+      }
+      
+      @media screen and (max-width: 815px) {
+        h1 {
+          font-size: 7ch;
+        }
+        
+        h2 {
+          font-size: 6ch;
+        }
+        
+        h3{
+          font-size: 4ch;
+        }
+      
+        .background-winnie{
+          background-size: cover;
+          background-position: center;
+        }
+      
+        .main-content {
+          padding: 25px;
+          background: rgba(255,255,255,0.75);
+        }
+        
+      }
+    </style>
     <div id="app"></div>
+    <script defer>
+      document.querySelector('#app').innerHTML = `
+        <div class="background-winnie">
+          <div class="main-content">
+            <h1>Our Little Hunny</h1>
+            <h3>Is turning one</h3>
+            <p>Join us to celebrate</p>
+            <h2>Tyler's 1st Birthday</h2>
+            <p>Saturday, august 15th at 1:00pm</p>
+            <br>
+            <p>The Martin Residence</p>
+            <p>1234 Honey Pot Lane</p>
+            <p>Winnie, tx</p>
+            <br>
+            <p>Rsvp to mom at 555-999-1234</p>
+          </div>
+          <div class="bees">
+            <div class="bee to-up"></div>
+            <div class="bee to-down"></div>
+            <div class="bee to-right"></div>
+            <div class="bee to-left"></div>
+          </div>
+        </div>
+      `
+    </script>
   </body>
 </html>
